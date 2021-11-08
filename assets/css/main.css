@@ -1,5 +1,21 @@
+@keyframes fadeIn {
+        from {
+            opacity: 0.5;
+            top: calc(100% + 30px);
+        }
+        to {
+            opacity: 1;
+            top: calc(100%);
+        }
+}
+
+
 .navbar {
     height: 80px;
+    position: fixed;
+}
+
+.container {
 }
 
 .navbar-list {
@@ -207,8 +223,8 @@
     cursor: pointer;
 }
 
-.navbar-item__menu-pick:active .navbar-item__menu-container {
-    display: block;
+.navbar-item__menu-pick:hover .navbar-item__menu-container, .navbar-item__menu-pick:active .navbar-item__menu-pick-selection {
+    display: inline-flex;
 }
 
 .navbar-item__menu-pick::after {
@@ -218,6 +234,15 @@
     border-top-color: #222;
     top: calc(50% - 2px);
     right: 12px;
+}
+
+.navbar-item__menu-pick::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    bottom: -18px;
+    left: 10px;
 }
 
 .navbar-item__menu-pick-img {
@@ -235,13 +260,14 @@
     border: 1px solid #d6d6d6;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
     position: absolute;
-    top: 48px;
+    /* top: 48px; */
     right: 0;
     display: flex;
     border-radius: 3px;
     width: 470px;
     height: 154px;
     display: none;
+    animation: fadeIn 0.4s ease-in;
 }
 
 .navbar-item__menu-container::before {
