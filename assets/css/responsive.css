@@ -1,0 +1,10 @@
+/* Tablet & mobile nav */
+@media (max-width: 1023px){
+    .navbar-item__menu {
+        display: none;
+    }
+
+    .navbar-menu-item {
+        display: block;
+    }
+}
